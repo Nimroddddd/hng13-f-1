@@ -4,39 +4,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Contact Us</title>
   <link rel="stylesheet" href="contact.css" />
 </head>
 
 <body>
   <div class="container">
-    <h2>Contact Us</h1>
+    <h2>Contact Us</h2>
       <form onsubmit=handleSubmit(event)>
         <div>
           <label for="name-input">Full Name</label>
-          <input required id="name-input" name="name" placeholder="Enter your full name" />
+          <input
+            id="name-input"  
+            name="name" 
+            placeholder="Enter your full name"
+            data-testid="test-contact-name"
+            aria-describedby="name-error"
+           />
+           <span data-testid="test-contact-error-name" id="name-error"></span>
         </div>
         <div>
           <label for="email-input">Email</label>
           <input
-            required 
-            type="email" 
             id="email-input" 
             name="email" 
+            data-testid="test-contact-email"
+            title="Please enter a valid email address (e.g. user@example.com)"
             placeholder="Enter your email address"
-            pattern="^[a-zA-Z0-9._%+\-]+\.[a-zA-z]{2,}$"
+            aria-describedby="email-error"
           />
+          <span data-testid="test-contact-error-email" id="email-error"></span>
         </div>
         <div>
           <label for="subject-input">Subject</label>
-          <input required id="subject-input" name="subject" placeholder="Enter the subject of the message" />
+          <input
+            id="subject-input" 
+            name="subject" 
+            placeholder="Enter the subject of the message"
+            data-testid="test-contact-subject"
+            aria-describedby="subject-error"
+          />
+          <span data-testid="test-contact-error-subject" id="subject-error"></span>
         </div>
         <div>
           <label for="message-input">Enter the message</label>
-          <input required id="message-input" name="message" placeholder="Enter your full name" />
+          <textarea
+            id="message-input" 
+            name="message" 
+            placeholder="Enter your message" 
+            data-testid="test-contact-message"
+            aria-describedby="message-error"
+          ></textarea>
+          <span data-testid="test-contact-error-message" id="message-error">
+
+          </span>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" data-testid="test-contact-submit">Submit</button>
       </form>
+      <p id="success-message" data-testid="test-contact-success"></p>
+
+      <footer class="page-footer">
+        <nav class="page-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+        </nav>
+      </footer>
   </div>
 
   <script src="contact.js"></script>
