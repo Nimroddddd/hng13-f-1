@@ -18,7 +18,14 @@
         </div>
         <div>
           <label for="email-input">Email</label>
-          <input required  id="email-input" name="email" placeholder="Enter your email address" />
+          <input
+            required 
+            type="email" 
+            id="email-input" 
+            name="email" 
+            placeholder="Enter your email address"
+            pattern="^[a-zA-Z0-9._%+\-]+\.[a-zA-z]{2,}$"
+          />
         </div>
         <div>
           <label for="subject-input">Subject</label>
